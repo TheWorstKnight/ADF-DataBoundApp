@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.2" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/ContactList.jsf" usageId="view_ContactListPageDef"/>
+    <page path="/ContactLookup.jsf" usageId="view_ContactLookupPageDef"/>
+    <page path="/ContactSearch.jsff" usageId="view_ContactSearchPageDef"/>
+    <page path="/Main.jsf" usageId="view_MainPageDef"/>
+    <page path="/ContactList.jsff" usageId="view_ContactListPageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_ContactListPageDef" path="view.pageDefs.ContactListPageDef"/>
+    <page id="view_ContactLookupPageDef" path="view.pageDefs.ContactLookupPageDef"/>
+    <page id="view_ContactSearchPageDef" path="view.pageDefs.ContactSearchPageDef"/>
+    <page id="view_MainPageDef" path="view.pageDefs.MainPageDef"/>
+    <page id="view_ContactListPageDef1" path="view.pageDefs.ContactListPageDef1"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AddressBook" path="model.AddressBook"/>
+  </dataControlUsages>
+</Application>

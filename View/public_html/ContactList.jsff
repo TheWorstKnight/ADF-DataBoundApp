@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:decorativeBox id="db1">
+    <f:facet name="top">
+      <af:panelGroupLayout id="pgl1" layout="scroll">
+        <af:panelGroupLayout id="pgl2" layout="horizontal" inlineStyle="padding:5px;">
+          <af:button text="Search" id="b1" action="Search"/>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:table value="#{bindings.Contact.collectionModel}" var="row" rows="#{bindings.Contact.rangeSize}"
+                emptyText="#{bindings.Contact.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" fetchSize="#{bindings.Contact.rangeSize}" id="t1">
+        <af:column sortProperty="#{bindings.Contact.hints.name.name}" sortable="true"
+                   headerText="#{bindings.Contact.hints.name.label}" id="c1">
+          <af:outputText value="#{row.name}" shortDesc="#{bindings.Contact.hints.name.tooltip}" id="ot1"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.Contact.hints.email.name}" sortable="true"
+                   headerText="#{bindings.Contact.hints.email.label}" id="c2">
+          <af:outputText value="#{row.email}" shortDesc="#{bindings.Contact.hints.email.tooltip}" id="ot2"/>
+        </af:column>
+      </af:table>
+    </f:facet>
+  </af:decorativeBox>
+</jsp:root>
